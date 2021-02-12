@@ -16,6 +16,10 @@ $(() => {
 
   // Game Events
   // setup event listeners to run the methods
+  // hide the new game button
   $('#new-game').hide()
+  // hide game board until the new game button is click
+  $('#game-board').hide()
+  // create a new game button click listener to run method
   $('#new-game').on('click', gameEvents.onNewGame)
 })

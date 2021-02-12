@@ -1,7 +1,7 @@
 const store = require('./../store')
 
 const onNewGameSuccess = () => {
-
+  $('#game-board').show()
 }
 const onNewGameFail = () => {
 
