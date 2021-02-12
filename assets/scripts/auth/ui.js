@@ -12,6 +12,8 @@ const signInSuccess = (response) => {
   store.user = response.user
   $('#display-message').html('Sign in was successful!')
   $('#sign-in').trigger('reset')
+
+  $('#new-game').show()
 }
 const signInFail = (response) => {
   $('#display-message').html('Sign in fail, email or password did not match.')
