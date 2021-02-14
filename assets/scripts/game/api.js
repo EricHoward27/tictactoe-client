@@ -2,24 +2,23 @@
 const config = require('../config')
 // empty object to store user data
 const store = require('./../store')
+
 // start a new game
-const newGame = (data) => {
-  // start player at X
-  store.player = 'X'
-  // set the counter at 0
-  store.counter = 0
+const newGame = () => {
   return $.ajax({
-    url: config.apiUrl.development + '/games',
+    url: config.apiUrl + '/games',
     method: 'POST',
     headers: {
-      Authorization: 'Bearer= ' + store.user.token
-    }
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: {}
   })
   // saving the api response to have access to game object
     .then((response) => {
       store.game = response.game
     })
 }
+
 module.exports = {
   newGame
 }

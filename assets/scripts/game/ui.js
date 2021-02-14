@@ -1,11 +1,12 @@
 const store = require('./../store')
 
-const onNewGameSuccess = () => {
-  $('#game-board').show()
+const onNewGameSuccess = (response) => {
+  $('#game-message').text('Welcome to Tic Tac Toe!')
 }
 const onNewGameFail = () => {
-
+  $('#game-message').text('Game fail to start, please try again.')
 }
+
 module.exports = {
   onNewGameSuccess,
   onNewGameFail

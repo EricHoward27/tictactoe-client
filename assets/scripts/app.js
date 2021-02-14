@@ -20,6 +20,23 @@ $(() => {
   $('#new-game').hide()
   // hide game board until the new game button is click
   $('#game-board').hide()
+  // when new game btn is press gameboard show
+  $('#new-game').on('click', () => {
+    $('#game-board').show()
+  })
+  // hide play again button
+  $('#restart-btn').hide()
   // create a new game button click listener to run method
-  $('#new-game').on('click', gameEvents.onNewGame)
+  $('#new-game').on('submit', gameEvents.onNewGame)
+
+  // gameboard handlers on 'click'
+  $('#cell-zero').on('click', gameEvents.onCellZero)
+  $('#cell-one').on('click', gameEvents.onCellOne)
+  $('#cell-two').on('click', gameEvents.onCellTwo)
+  $('#cell-three').on('click', gameEvents.onCellThree)
+  $('#cell-four').on('click', gameEvents.onCellFour)
+  $('#cell-five').on('click', gameEvents.onCellFive)
+  $('#cell-six').on('click', gameEvents.onCellSix)
+  $('#cell-seven').on('click', gameEvents.onCellSeven)
+  $('#cell-eight').on('click', gameEvents.onCellEight)
 })

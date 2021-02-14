@@ -14,6 +14,7 @@
     <body>
       <h1>Tic-Tac-Toe Game</h1>
       <div class="container">
+
         <div id="auth-section">
           <form id="sign-up">
             <input type="email" name="credentials[email]" placeholder="Email" required/>
@@ -37,9 +38,26 @@
             </div>
         <div id="display-message"></div>
         <div id="game-section">
-          <button id="new-game">Play</button>
-          <div id="game-board">
-
+        <form id="new-game">
+          <button>Play</button>
+        </form>
+          <div class="game-board" id="game-board">
+            <div class="container">
+            <div class="row">
+            <div class="col-4 col-md-4 box bg-primary text-center" id="cell-zero"></div>
+            <div class="col-4 col-md-4 box bg-secondary text-center" id="cell-one"></div>
+            <div class="col-4 col-md-4 box bg-primary text-center" id="cell-two"></div>
+            <div class="col-4 col-md-4 box bg-secondary text-center" id="cell-three"></div>
+            <div class="col-4 col-md-4 box bg-primary text-center" id="cell-four"></div>
+            <div class="col-4 col-md-4 box bg-secondary text-center" id="cell-five"></div>
+            <div class="col-4 col-md-4 box bg-primary text-center" id="cell-six"></div>
+            <div class="col-4 col-md-4 box bg-secondary text-center" id="cell-seven"></div>
+            <div class="col-4 col-md-4 box bg-primary text-center" id="cell-eight"></div>
+          </div>
+          </div>
+        </div>
+          <div class="game-message" id="game-message">
+            <button id="restart-btn">Play Again</button>
           </div>
         </div>
       </div>
