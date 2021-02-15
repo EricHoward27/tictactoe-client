@@ -29,8 +29,11 @@ const onCellZero = (event) => {
   // when user click space, check if space empty
   if (store.game.cells[0] === '') {
     console.log('Valid cell!')
+    // add their token to board (x or o)
+    $('#cell-zero').html(store.playerStart)
+    console.log(store.game.cells[0])
+    ui.cellZeroSuccess()
   }
-  // if user choose valid space, add x or o to game cell array
 }
 
 module.exports = {
