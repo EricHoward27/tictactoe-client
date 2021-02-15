@@ -4,7 +4,7 @@ const config = require('../config')
 const store = require('./../store')
 
 // start a new game
-const newGame = () => {
+const newGame = (data) => {
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'POST',
@@ -19,6 +19,12 @@ const newGame = () => {
     })
 }
 
+//
+const cellZero = () => {
+
+}
+
 module.exports = {
-  newGame
+  newGame,
+  cellZero
 }
