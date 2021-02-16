@@ -39,4 +39,7 @@ $(() => {
   $('#cell-six').on('click', gameEvents.onCellSix)
   $('#cell-seven').on('click', gameEvents.onCellSeven)
   $('#cell-eight').on('click', gameEvents.onCellEight)
+
+  // tictactoe board click handler
+  $('#game-board').on('click', gameEvents.onGameBoard)
 })
