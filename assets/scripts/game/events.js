@@ -6,8 +6,8 @@ const ui = require('./ui')
 const getFormFields = require('../../../lib/get-form-fields')
 // require to get game object from store
 const store = require('./../store')
-let xTurn = 'X'
-let circleTurn = 'O'
+const xTurn = 'X'
+const circleTurn = 'O'
 // new game create handler
 const onNewGame = (event) => {
   event.preventDefault()
@@ -34,7 +34,16 @@ const onGameBoard = (event) => {
     // check board data-index working
     console.log(boardIndex)
     // add player token to the board
-    $(event.target).text(xTurn)
+    $(event.target).text(store.playerStart)
+    ui.gameBoardSuccess()
+  } else {
+    ui.gameBoardFail()
+  }
+  // rotate player from X and O
+  if (store.playerStart === 'X') {
+    store.playerStart = circleTurn
+  } else {
+    store.playerStart = xTurn
   }
 }
 // create function to check player clicks on board
