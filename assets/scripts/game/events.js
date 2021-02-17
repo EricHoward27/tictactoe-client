@@ -6,17 +6,16 @@ const ui = require('./ui')
 const getFormFields = require('../../../lib/get-form-fields')
 // require to get game object from store
 const store = require('./../store')
-const xTurn = 'X'
-const circleTurn = 'O'
+
+// start player with X
+let playerStart = 'X'
 // new game create handler
 const onNewGame = (event) => {
   event.preventDefault()
   const form = event.target
-  // start player at X when game created
-  store.playerStart = xTurn
   const data = getFormFields(form)
   // API call to make POST games
-  api.newGame(data)
+  api.newGame()
     .then(ui.onNewGameSuccess)
     .catch(ui.onNewGameFail)
 }
@@ -27,24 +26,31 @@ const onGameBoard = (event) => {
   const data = getFormFields(userClick)
   // store board cells into a variable
   const board = store.game.cells
+  // set current player turns
+  const playerTurn = playerStart
   // check if space empty on board using a loop
   const boardData = board[boardIndex]
   if (boardData === '') {
-    console.log('this space is empty')
+    // console.log('this space is empty')
     // check board data-index working
-    console.log(boardIndex)
-    // add player token to the board
-    $(event.target).text(store.playerStart)
-    ui.gameBoardSuccess()
+    // console.log(boardIndex)
+    // rotate player from X and O
+    if (playerTurn === 'X') {
+      $(userClick).text('X')
+      // add message for player turn change
+      playerStart = 'O'
+      $('#turn-display').text("It's O turn...")
+    } else if (playerTurn === 'O') {
+      $(userClick).text('O')
+      playerStart = 'X'
+      $('#turn-display').text("It's X turn...")
+    }
   } else {
-    ui.gameBoardFail()
+    $('#game-message').text('Sorry, invalid move. Try again.')
   }
-  // rotate player from X and O
-  if (store.playerStart === 'X') {
-    store.playerStart = circleTurn
-  } else {
-    store.playerStart = xTurn
-  }
+  api.gameBoard(boardIndex, playerTurn)
+    .then(ui.gameBoardSuccess)
+    .catch(ui.gameBoardFail)
 }
 // create function to check player clicks on board
 // const onCellZero = (event) => {

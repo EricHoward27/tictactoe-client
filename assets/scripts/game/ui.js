@@ -3,9 +3,11 @@ const store = require('./../store')
 const api = require('./api')
 
 const onNewGameSuccess = (response) => {
+  store.game = response.game
   // console.log(store.game.cells)
   // game message to show success text when play btn is click
-  $('#game-message').text('Welcome to Tic Tac Toe!')
+  $('#display-message').text('Welcome to Tic Tac Toe!')
+  $('#game-message').text('Player X have first move...!')
 }
 const onNewGameFail = (response) => {
   // if game fail to start this message will show
@@ -17,6 +19,7 @@ const gameBoardSuccess = (response) => {
 const gameBoardFail = (response) => {
   $('#game-message').text('Invalid move, please try again.')
 }
+
 // success message use when player clicks on valid space
 // fail message use when player click on invalid space
 // const cellZeroSuccess = (response) => {
