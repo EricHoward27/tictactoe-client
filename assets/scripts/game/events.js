@@ -34,6 +34,8 @@ const onGameBoard = (event) => {
     // console.log('this space is empty')
     // check board data-index working
     // console.log(boardIndex)
+    // store x or o in board cells to prevent invalid moves
+    store.game.cells[boardIndex] = playerTurn
     // rotate player from X and O
     if (playerTurn === 'X') {
       $(userClick).text('X')
