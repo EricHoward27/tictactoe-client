@@ -6,7 +6,8 @@ const ui = require('./ui')
 const getFormFields = require('../../../lib/get-form-fields')
 // require to get game object from store
 const store = require('./../store')
-
+// store board cells into a global variable
+const board = store.game.cells
 // start player with X
 let playerStart = 'X'
 // new game create handler
@@ -24,8 +25,6 @@ const onGameBoard = (event) => {
   const boardIndex = $(event.target).data('index')
   const userClick = event.target
   const data = getFormFields(userClick)
-  // store board cells into a variable
-  const board = store.game.cells
   // set current player turns
   const playerTurn = playerStart
   // check if space empty on board using a loop
@@ -48,11 +47,17 @@ const onGameBoard = (event) => {
       $('#turn-display').text("It's X turn...")
     }
   } else {
-    $('#game-message').text('Sorry, invalid move. Try again.')
+    $('#turn-display').text('Sorry, invalid move. Try again.')
   }
   api.gameBoard(boardIndex, playerTurn)
     .then(ui.gameBoardSuccess)
     .catch(ui.gameBoardFail)
+}
+
+const checkWinner = (board) => {
+  if (board[0] === board[1] && board[0] === board[2]) {
+    console.log('You won!')
+  }
 }
 // create function to check player clicks on board
 // const onCellZero = (event) => {
@@ -229,7 +234,8 @@ const onGameBoard = (event) => {
 
 module.exports = {
   onNewGame,
-  onGameBoard
+  onGameBoard,
+  checkWinner
   // onCellZero,
   // onCellOne,
   // onCellTwo,

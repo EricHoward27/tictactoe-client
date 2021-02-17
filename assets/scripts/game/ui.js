@@ -14,7 +14,7 @@ const onNewGameFail = (response) => {
   $('#game-message').text('Game fail to start, please try again.')
 }
 const gameBoardSuccess = (response) => {
-  $('#game-message').text('Good move!')
+  $('#game-message').text('')
 }
 const gameBoardFail = (response) => {
   $('#game-message').text('Invalid move, please try again.')
