@@ -51,8 +51,9 @@ const onGameBoard = (event) => {
     $('#turn-display').text('Sorry, invalid move. Try again.')
   }
   const checkWinner = () => {
+    if (store.game.cells !== '') {
     // check top row
-    if ((store.game.cells[0] === store.game.cells[1] && store.game.cells[0] === store.game.cells[2]) ||
+      if ((store.game.cells[0] === store.game.cells[1] && store.game.cells[0] === store.game.cells[2]) ||
     // check middle row
     (store.game.cells[3] === store.game.cells[4] && store.game.cells[3] === store.game.cells[5]) ||
     // check bottom row
@@ -67,14 +68,15 @@ const onGameBoard = (event) => {
     (store.game.cells[0] === store.game.cells[4] && store.game.cells[0] === store.game.cells[8]) ||
     // check top right cross
     (store.game.cells[2] === store.game.cells[4] && store.game.cells[2] === store.game.cells[6])) {
+        console.log(playerTurn + ' has won the game!')
+      }
     }
-    console.log(playerTurn + ' has won the game!')
   }
 
   api.gameBoard(boardIndex, playerTurn)
     .then(ui.gameBoardSuccess)
     .catch(ui.gameBoardFail)
-    .then(checkWinner)
+  checkWinner()
 }
 
 // const checkForO = () => {
