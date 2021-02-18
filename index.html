@@ -54,9 +54,6 @@
             <button type="button" class="btn btn-primary">Sign In</button>
           </div>
           </form>
-
-
-
         </div>
             </div>
         <div id="display-message"></div>
@@ -65,21 +62,22 @@
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Save changes</button>
       </div>
-
     </div>
   </div>
 </div>
 
-<form id="sign-out">
-  <button type="button"class="btn-btn-danger">Sign Out</button>
-</form>
+
+        <form id="sign-out">
+          <button>Sign Out</button>
+        </form>
+
+        <form id="change-password">
+          <input type="password" name="passwords[old]" placeholder="Old Password" required/>
+          <input type="password" name="passwords[new]" placeholder="New Password" required/>
+          <button>Change Password</button>
+        </form>
 
 
-<form id="change-password">
-  <input type="password" name="passwords[old]" placeholder="Old Password" required/>
-  <input type="password" name="passwords[new]" placeholder="New Password" required/>
-  <button>Change Password</button>
-</form>
         <div id="game-section">
         <form id="new-game">
           <button>Play</button>
