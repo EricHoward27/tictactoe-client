@@ -84,21 +84,29 @@
           <button class="btn btn-success">Start Game</button>
         </form>
 
-            <div class="container">
-            <div class="game-board" id="game-board">
-            <div class="row">
-            <div class="col-4 col-md-4 box bg-primary text-center" id="cell-zero" data-index='0'>0</div>
-            <div class="col-4 col-md-4 box bg-secondary text-center" id="cell-one" data-index='1'>1</div>
-            <div class="col-4 col-md-4 box bg-primary text-center" id="cell-two" data-index='2'>2</div>
-            <div class="col-4 col-md-4 box bg-secondary text-center" id="cell-three" data-index='3'>3</div>
-            <div class="col-4 col-md-4 box bg-primary text-center" id="cell-four" data-index='4'>4</div>
-            <div class="col-4 col-md-4 box bg-secondary text-center" id="cell-five" data-index='5'>5</div>
-            <div class="col-4 col-md-4 box bg-primary text-center" id="cell-six" data-index='6'>6</div>
-            <div class="col-4 col-md-4 box bg-secondary text-center" id="cell-seven" data-index='7'>7</div>
-            <div class="col-4 col-md-4 box bg-primary text-center" id="cell-eight" data-index='8'>8</div>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-12 col-sm-2 ads game-message" id="game-message">Game Message:<br></div>
+                <div class="col-12 col-sm-6 content">
+            <div class="container-fluid tic-board game-board"id="game-board">
+            <div class="row tic-row">
+            <div class="col-4 tic-box" id="cell-zero" data-index='0'></div>
+            <div  class="col-4 tic-box"id="cell-one" data-index='1'></div>
+            <div  class="col-4 tic-box" id="cell-two" data-index='2'></div>
+          </div>
+            <div class="row tic-row">
+            <div  class="col-4 tic-box" id="cell-three" data-index='3'></div>
+            <div  class="col-4 tic-box" id="cell-four" data-index='4'></div>
+            <div  class="col-4 tic-box" id="cell-five" data-index='5'></div>
+          </div>
+            <div class="row tic-row">
+            <div class="col-4 tic-box" id="cell-six" data-index='6'></div>
+            <div class="col-4 tic-box" id="cell-seven" data-index='7'></div>
+            <div class="col-4 tic-box"id="cell-eight" data-index='8'></div>
           </div>
           </div>
-          <div id="turn-display"></div>
+          <div class="col-12 col-sm-2 panel"id="turn-display">Score:<br><button class="btn btn-danger">Reset</button></div>
+        </div>
         </div>
           <div class="game-message" id="game-message">
             <button id="restart-btn">Play Again</button>

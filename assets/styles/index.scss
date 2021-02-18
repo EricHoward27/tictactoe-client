@@ -1,1 +1,32 @@
 @import '~bootstrap/scss/bootstrap';
+.ads{
+  text-align: center;
+  margin: .4vw 0;
+  background: #6b7b8c;
+  padding: .4vw;
+}
+
+.content{
+  margin: .4vw 0;
+  background: lightblue;
+  padding: .4vw;
+}
+.tic-panel{
+  border: solid 2px black;
+  margin: .4vw 0;
+  background: #12a4d9;
+  padding: .4vw;
+}
+
+.tic-box{
+  width: 85px;
+ height: 85px;
+  border: solid black 1px;
+  font-size: 5vw;
+  background: #322e2f;
+  text-align: center;
+  color: lavender;
+}
+.tic-box:hover{
+  background: #20948B;
+}

@@ -51,28 +51,25 @@ const onGameBoard = (event) => {
     $('#turn-display').text('Sorry, invalid move. Try again.')
   }
   const checkWinner = () => {
-    if (store.game.cells !== '') {
     // check top row
-      if ((store.game.cells[0] === store.game.cells[1] && store.game.cells[0] === store.game.cells[2]) ||
-    // check middle row
-    (store.game.cells[3] === store.game.cells[4] && store.game.cells[3] === store.game.cells[5]) ||
-    // check bottom row
-    (store.game.cells[6] === store.game.cells[7] && store.game.cells[6] === store.game.cells[8]) ||
-    // check left column
-    (store.game.cells[0] === store.game.cells[3] && store.game.cells[0] === store.game.cells[6]) ||
-    // check middle column
-    (store.game.cells[1] === store.game.cells[4] && store.game.cells[1] === store.game.cells[7]) ||
-    // check right column
-    (store.game.cells[2] === store.game.cells[5] && store.game.cells[2] === store.game.cells[8]) ||
-    // check top left cross
-    (store.game.cells[0] === store.game.cells[4] && store.game.cells[0] === store.game.cells[8]) ||
-    // check top right cross
-    (store.game.cells[2] === store.game.cells[4] && store.game.cells[2] === store.game.cells[6])) {
-        console.log(playerTurn, ' has won the game!')
-      }
+    if (store.game.cells !== '' && store.game.cells[0] === store.game.cells[1] && store.game.cells[0] === store.game.cells[2]) {
+      // check middle row
+    } else if (store.game.cells !== '' && store.game.cells[3] === store.game.cells[4] && store.game.cells[3] === store.game.cells[5]) {
+      // check bottom row
+    } else if (store.game.cells !== '' && store.game.cells[6] === store.game.cells[7] && store.game.cells[6] === store.game.cells[8]) {
+      // check left column
+    } else if (store.game.cells !== '' && store.game.cells[0] === store.game.cells[3] && store.game.cells[0] === store.game.cells[6]) {
+      // check middle column
+    } else if (store.game.cells !== '' && store.game.cells[1] === store.game.cells[4] && store.game.cells[1] === store.game.cells[7]) {
+      // check right column
+    } else if (store.game.cells !== '' && store.game.cells[2] === store.game.cells[5] && store.game.cells[2] === store.game.cells[8]) {
+      // check top left cross
+    } else if (store.game.cells !== '' && store.game.cells[0] === store.game.cells[4] && store.game.cells[0] === store.game.cells[8]) {
+      // check top right cross
+    } else if (store.game.cells !== '' && store.game.cells[2] === store.game.cells[4] && store.game.cells[2] === store.game.cells[6]) {
     }
+    console.log(playerTurn + ' has won the game!')
   }
-
   api.gameBoard(boardIndex, playerTurn)
     .then(ui.gameBoardSuccess)
     .catch(ui.gameBoardFail)
