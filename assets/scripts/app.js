@@ -7,9 +7,6 @@
 const authEvents = require('./auth/events')
 const gameEvents = require('./game/events')
 $(() => {
-  // hide change password and sign out
-  $('#sign-out').hide()
-  $('#change-password').hide()
   // your JS code goes here
   // setup event listener for 'sign-up' and run method
   $('#sign-up').on('submit', authEvents.onSignUp)
