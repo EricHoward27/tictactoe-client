@@ -68,7 +68,7 @@ const onGameBoard = (event) => {
     (store.game.cells[0] === store.game.cells[4] && store.game.cells[0] === store.game.cells[8]) ||
     // check top right cross
     (store.game.cells[2] === store.game.cells[4] && store.game.cells[2] === store.game.cells[6])) {
-        console.log(playerTurn + ' has won the game!')
+        console.log(playerTurn, ' has won the game!')
       }
     }
   }
