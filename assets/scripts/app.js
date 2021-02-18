@@ -13,7 +13,11 @@ $(() => {
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#sign-out').on('click', authEvents.onSignOut)
   $('#change-password').on('submit', authEvents.onChangePassword)
-
+  // hide sign out and cp
+  $('#sign-out').hide()
+  $('#change-password').hide()
+  $('#game-message').hide()
+  $('#turn-display').hide()
   // Game Events
   // setup event listeners to run the methods
   // hide the new game button

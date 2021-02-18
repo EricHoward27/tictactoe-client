@@ -14,6 +14,10 @@ const signInSuccess = (response) => {
   $('#sign-in').trigger('reset')
 
   $('#new-game').show()
+  $('#sign-out').show()
+  $('#change-password').show()
+  $('#game-message').show()
+  $('#turn-display').show()
 }
 const signInFail = (response) => {
   $('#display-message').html('Sign in fail, email or password did not match.')

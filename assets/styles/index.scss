@@ -1,5 +1,10 @@
 @import '~bootstrap/scss/bootstrap';
-.ads{
+h1{
+  text-align: center;
+  font-family: 'Roboto Mono', monospace;
+  color: red;
+}
+.game-panel{
   text-align: center;
   margin: .4vw 0;
   background: #6b7b8c;
