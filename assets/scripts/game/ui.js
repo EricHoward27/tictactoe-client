@@ -19,6 +19,12 @@ const gameBoardSuccess = (response) => {
 const gameBoardFail = (response) => {
   $('#game-message').text('Invalid move, please try again.')
 }
+const checkForXSuccess = (response) => {
+  $('#game-message').text('X wins!')
+}
+const checkForOSuccess = (response) => {
+  $('#game-message').text('O wins!')
+}
 
 // success message use when player clicks on valid space
 // fail message use when player click on invalid space
@@ -80,7 +86,9 @@ module.exports = {
   onNewGameSuccess,
   onNewGameFail,
   gameBoardSuccess,
-  gameBoardFail
+  gameBoardFail,
+  checkForOSuccess,
+  checkForXSuccess
   // cellZeroSuccess,
   // cellZeroFail,
   // cellOneSuccess,
