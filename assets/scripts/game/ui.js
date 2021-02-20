@@ -13,11 +13,13 @@ const onNewGameFail = (response) => {
   // if game fail to start this message will show
   $('#game-message').text('Game fail to start, please try again.')
 }
-const gameBoardSuccess = (response) => {
-  $('#game-message').text('')
+const gameUpdateSuccess = (response) => {
+  // check if update is successful
+  console.log(store.game)
+  // $('#game-message').text('Game Over!')
 }
-const gameBoardFail = (response) => {
-  $('#game-message').text('Invalid move, please try again.')
+const gameUpdateFail = () => {
+  $('#game-message').text('GAME OVER!')
 }
 const checkForXSuccess = (response) => {
   $('#game-message').text('X wins!')
@@ -85,8 +87,8 @@ const checkForOSuccess = (response) => {
 module.exports = {
   onNewGameSuccess,
   onNewGameFail,
-  gameBoardSuccess,
-  gameBoardFail,
+  gameUpdateSuccess,
+  gameUpdateFail,
   checkForOSuccess,
   checkForXSuccess
   // cellZeroSuccess,

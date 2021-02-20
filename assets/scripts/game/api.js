@@ -18,26 +18,17 @@ const newGame = () => {
   //     store.game = response.game
   //   })
 }
-const gameBoard = (boardIndex, playerTurn) => {
-  console.log(boardIndex)
-  console.log(playerTurn)
+const gameUpdate = (update) => {
   return $.ajax({
     url: config.apiUrl + '/games/' + store.game._id,
     method: 'PATCH',
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
-    data: {
-      game: {
-        cell: {
-          index: boardIndex,
-          value: playerTurn
-        }
-      }
-    }
+    data: update
   })
 }
 module.exports = {
   newGame,
-  gameBoard
+  gameUpdate
 }

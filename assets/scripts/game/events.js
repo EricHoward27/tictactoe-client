@@ -103,9 +103,19 @@ const onGameBoard = (event) => {
       $('#turn-display').text(`${playerTurn} won the round!`)
     }
   }
-  api.gameBoard(boardIndex, playerTurn)
-    .then(ui.gameBoardSuccess)
-    .catch(ui.gameBoardFail)
+  const update = {
+    game: {
+      cell: {
+        index: boardData,
+        value: playerTurn
+      },
+      over: false
+    }
+  }
+
+  api.gameUpdate(update)
+    .then(ui.gameUpdateSuccess)
+    .catch(ui.gameUpdateFail)
   checkWinner()
 }
 
