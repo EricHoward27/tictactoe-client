@@ -52,23 +52,56 @@ const onGameBoard = (event) => {
   }
   const checkWinner = () => {
     // check top row
-    if (store.game.cells !== '' && store.game.cells[0] === store.game.cells[1] && store.game.cells[0] === store.game.cells[2]) {
+    if (store.game.cells[0] && store.game.cells[1] && store.game.cells[2] === 'X') {
+      $('#turn-display').text(`${playerTurn} won the round!`)
       // check middle row
-    } else if (store.game.cells !== '' && store.game.cells[3] === store.game.cells[4] && store.game.cells[3] === store.game.cells[5]) {
+    } else if (store.game.cells[3] && store.game.cells[4] && store.game.cells[5] === 'X') {
+      $('#turn-display').text(`${playerTurn} won the round!`)
       // check bottom row
-    } else if (store.game.cells !== '' && store.game.cells[6] === store.game.cells[7] && store.game.cells[6] === store.game.cells[8]) {
+    } else if (store.game.cells[6] && store.game.cells[7] && store.game.cells[8] === 'X') {
+      $('#turn-display').text(`${playerTurn} won the round!`)
       // check left column
-    } else if (store.game.cells !== '' && store.game.cells[0] === store.game.cells[3] && store.game.cells[0] === store.game.cells[6]) {
+    } else if (store.game.cells[0] && store.game.cells[3] && store.game.cells[6] === 'X') {
+      $('#turn-display').text(`${playerTurn} won the round!`)
       // check middle column
-    } else if (store.game.cells !== '' && store.game.cells[1] === store.game.cells[4] && store.game.cells[1] === store.game.cells[7]) {
+    } else if (store.game.cells[1] && store.game.cells[4] && store.game.cells[7] === 'X') {
+      $('#turn-display').text(`${playerTurn} won the round!`)
       // check right column
-    } else if (store.game.cells !== '' && store.game.cells[2] === store.game.cells[5] && store.game.cells[2] === store.game.cells[8]) {
+    } else if (store.game.cells[2] && store.game.cells[5] && store.game.cells[8] === 'X') {
+      $('#turn-display').text(`${playerTurn} won the round!`)
       // check top left cross
-    } else if (store.game.cells !== '' && store.game.cells[0] === store.game.cells[4] && store.game.cells[0] === store.game.cells[8]) {
+    } else if (store.game.cells[0] && store.game.cells[4] && store.game.cells[8] === 'X') {
+      $('#turn-display').text(`${playerTurn} won the round!`)
       // check top right cross
-    } else if (store.game.cells !== '' && store.game.cells[2] === store.game.cells[4] && store.game.cells[2] === store.game.cells[6]) {
+    } else if (store.game.cells[2] && store.game.cells[4] && store.game.cells[6] === 'X') {
+      $('#turn-display').text(`${playerTurn} won the round!`)
     }
-    console.log(playerTurn + ' has won the game!')
+    // win conditions for Os
+    // check top row
+    if (store.game.cells[0] && store.game.cells[1] && store.game.cells[2] === 'O') {
+      $('#turn-display').text(`${playerTurn} won the round!`)
+      // check middle row
+    } else if (store.game.cells[3] && store.game.cells[4] && store.game.cells[5] === 'O') {
+      $('#turn-display').text(`${playerTurn} won the round!`)
+      // check bottom row
+    } else if (store.game.cells[6] && store.game.cells[7] && store.game.cells[8] === 'O') {
+      $('#turn-display').text(`${playerTurn} won the round!`)
+      // check left column
+    } else if (store.game.cells[0] && store.game.cells[3] && store.game.cells[6] === 'O') {
+      $('#turn-display').text(`${playerTurn} won the round!`)
+      // check middle column
+    } else if (store.game.cells[1] && store.game.cells[4] && store.game.cells[7] === 'O') {
+      $('#turn-display').text(`${playerTurn} won the round!`)
+      // check right column
+    } else if (store.game.cells[2] && store.game.cells[5] && store.game.cells[8] === 'O') {
+      $('#turn-display').text(`${playerTurn} won the round!`)
+      // check top left cross
+    } else if (store.game.cells[0] && store.game.cells[4] && store.game.cells[8] === 'O') {
+      $('#turn-display').text(`${playerTurn} won the round!`)
+      // check top right cross
+    } else if (store.game.cells[2] && store.game.cells[4] && store.game.cells[6] === 'O') {
+      $('#turn-display').text(`${playerTurn} won the round!`)
+    }
   }
   api.gameBoard(boardIndex, playerTurn)
     .then(ui.gameBoardSuccess)
