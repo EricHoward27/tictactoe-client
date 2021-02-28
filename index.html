@@ -81,9 +81,7 @@
 
 
         <div id="game-section">
-        <form id="new-game">
-          <button class="btn btn-success">Start Game</button>
-        </form>
+          <button class="btn btn-success" id="new-game">Start Game</button>
 
             <div class="container-fluid">
               <div class="row">
@@ -91,22 +89,23 @@
                 <div class="col-12 col-sm-6 content">
             <div class="container-fluid tic-board game-board"id="game-board">
             <div class="row tic-row">
-            <div class="col-4 tic-box" id="cell-zero" data-index='0'></div>
-            <div  class="col-4 tic-box"id="cell-one" data-index='1'></div>
-            <div  class="col-4 tic-box" id="cell-two" data-index='2'></div>
+            <div class="col-4 tic-box box" data-index='0'></div>
+            <div  class="col-4 tic-box box" data-index='1'></div>
+            <div  class="col-4 tic-box box" data-index='2'></div>
           </div>
             <div class="row tic-row">
-            <div  class="col-4 tic-box" id="cell-three" data-index='3'></div>
-            <div  class="col-4 tic-box" id="cell-four" data-index='4'></div>
-            <div  class="col-4 tic-box" id="cell-five" data-index='5'></div>
+            <div  class="col-4 tic-box box" data-index='3'></div>
+            <div  class="col-4 tic-box box" data-index='4'></div>
+            <div  class="col-4 tic-box box" data-index='5'></div>
           </div>
             <div class="row tic-row">
-            <div class="col-4 tic-box" id="cell-six" data-index='6'></div>
-            <div class="col-4 tic-box" id="cell-seven" data-index='7'></div>
-            <div class="col-4 tic-box"id="cell-eight" data-index='8'></div>
+            <div class="col-4 tic-box box" data-index='6'></div>
+            <div class="col-4 tic-box box" data-index='7'></div>
+            <div class="col-4 tic-box box" data-index='8'></div>
           </div>
           </div>
-          <div class="col-12 col-sm-2 panel"id="turn-display">Score:<br><button class="btn btn-danger">Reset</button></div>
+          <div class="col-12 col-sm-2 panel"id="turn-display"><br></div>
+          <button class="btn btn-danger" id="reset-game">Reset Game</button>
         </div>
         </div>
           <!-- <div class="game-message" id="game-message">

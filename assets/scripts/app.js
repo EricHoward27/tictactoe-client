@@ -18,6 +18,7 @@ $(() => {
   $('#change-password').hide()
   $('#game-message').hide()
   $('#turn-display').hide()
+  // $('#reset-game').hide()
   // Game Events
   // setup event listeners to run the methods
   // hide the new game button
@@ -31,19 +32,11 @@ $(() => {
   // hide play again button
   $('#restart-btn').hide()
   // create a new game button click listener to run method
-  $('#new-game').on('submit', gameEvents.onNewGame)
+  $('#new-game').on('click', gameEvents.onNewGame)
 
   // gameboard handlers on 'click'
-  $('#cell-zero').on('click', gameEvents.onCellZero)
-  $('#cell-one').on('click', gameEvents.onCellOne)
-  $('#cell-two').on('click', gameEvents.onCellTwo)
-  $('#cell-three').on('click', gameEvents.onCellThree)
-  $('#cell-four').on('click', gameEvents.onCellFour)
-  $('#cell-five').on('click', gameEvents.onCellFive)
-  $('#cell-six').on('click', gameEvents.onCellSix)
-  $('#cell-seven').on('click', gameEvents.onCellSeven)
-  $('#cell-eight').on('click', gameEvents.onCellEight)
+$('.box').on('click', gameEvents.onCellClick)
 
   // tictactoe board click handler
-  $('#game-board').on('click', gameEvents.onGameBoard)
+  // $('#game-board').on('click', gameEvents.onGameBoard)
 })

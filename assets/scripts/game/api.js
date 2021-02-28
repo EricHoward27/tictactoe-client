@@ -18,14 +18,24 @@ const newGame = () => {
   //     store.game = response.game
   //   })
 }
-const gameUpdate = (update) => {
+const gameUpdate = (cellId) => {
+  console.log(store.currentPlayer)
+  console.log(cellId)
   return $.ajax({
     url: config.apiUrl + '/games/' + store.game._id,
     method: 'PATCH',
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
-    data: update
+    data: {
+      game: {
+        cell: {
+          'index': cellId,
+          'value': store.currentPlayer
+        },
+        'over': store.gameOver
+      }
+    }
   })
 }
 module.exports = {

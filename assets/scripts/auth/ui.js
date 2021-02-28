@@ -4,14 +4,14 @@ const signUpSuccess = (response) => {
   $('#display-message').html('Account created successful!')
   $('#sign-up').trigger('reset')
 }
-const signUpFailure = (response) => {
+const signUpFailure = (error) => {
   $('#display-message').html('Sign up fail, please try again.')
 }
-const signInSuccess = (response) => {
+const signInSuccess = (data) => {
   // store user object into the store.js
-  store.user = response.user
   $('#display-message').html('Sign in was successful!')
   $('#sign-in').trigger('reset')
+  store.user = data.user
 
   $('#new-game').show()
   $('#sign-out').show()
