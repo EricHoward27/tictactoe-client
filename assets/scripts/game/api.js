@@ -38,7 +38,17 @@ const gameUpdate = (cellId) => {
     }
   })
 }
+const viewGame = function () {
+  return $.ajax({
+    method: 'GET',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    url: config.apiUrl + '/games'
+  })
+}
 module.exports = {
   newGame,
-  gameUpdate
+  gameUpdate,
+  viewGame
 }

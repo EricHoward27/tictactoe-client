@@ -45,6 +45,13 @@ const onCellClick = (event) => {
   })
   .catch(ui.gameUpdateFail)
   }
+  
+}
+const onViewGame = (event) => {
+  event.preventDefault()
+  api.viewGame()
+    .then(ui.onViewGameSuccess)
+    .catch(ui.onViewGameError)
 }
 // ***---modify board click function to make more dry---
 // const onGameBoard = (event) => {
@@ -299,7 +306,8 @@ const onCellClick = (event) => {
 
 module.exports = {
   onNewGame,
-  onCellClick
+  onCellClick,
+  onViewGame
   // onCellZero,
   // onCellOne,
   // onCellTwo,

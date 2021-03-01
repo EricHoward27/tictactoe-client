@@ -38,7 +38,8 @@ $(() => {
 
   // gameboard handlers on 'click'
 $('.box').on('click', gameEvents.onCellClick)
-
+  // onViewGame handlers on click
+  $('#view-game').on('click', gameEvents.onViewGame)
   // tictactoe board click handler
   // $('#game-board').on('click', gameEvents.onGameBoard)
 

@@ -66,6 +66,14 @@ const checkTieSuccess = () => {
     $('#turn-display').hide()
   }, 4000)
 }
+const onViewGameSuccess = () => {
+ const gamesPlayed = store.games.length
+ console.log(gamesPlayed)
+  $('#game-message').text('You have played ' + gamesPlayed)
+}
+const onViewGameError = (err) => {
+$('#game-message').text(err)
+}
 // const checkForXSuccess = (response) => {
 //   $('#game-message').text('X wins!')
 // }
@@ -137,7 +145,9 @@ module.exports = {
   checkWinnerSuccess,
   checkTieSuccess,
   invalidMove,
-  gameOver
+  gameOver,
+  onViewGameSuccess,
+  onViewGameError
   // cellZeroSuccess,
   // cellZeroFail,
   // cellOneSuccess,
