@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>SUPER TICTACTOE</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <audio autoplay loop>
+        <source src="./assets/audio/01 - Super Mario Bros.mp3" type="audio/ogg"> 
+      </audio>
+      <h1 class="title">Super Tic-Tac-Toe</h1>
+        <div id="auth-section" class= "container" id="container">
+          <div class="form-container sign-up-container">
+            <form id="sign-up">
+              <h1>Sign Up</h1>
+              <label for="email">Email Address: </label>
+              <input type="email" name="credentials[email]" placeholder="Email" required/>
+              <label for="password">Create Password: </label>
+              <input type="password"  name="credentials[password]" placeholder="Password" required/>
+              <input type="password"  name="credentials[password_confirmation]" placeholder="Confirm Password" required/>
+              <button class="btn btn-primary">Sign Up</button>
+            </form>
+          </div>
+          <div class="form-container sign-in-container">
+            <form id="sign-in">
+              <h1>Log In</h1>
+              <label for="email">Email Address: </label>
+              <input type="email" name="credentials[email]" placeholder="Email" required/>
+              <label for="password">Password: </label>
+              <input type="password" name="credentials[password]" placeholder="Password" required/>
+              <a href="#">Forget your password?</a>
+              <button class="btn btn-primary">Sign In</button>
+          </form>
+          </div>
+          
+          <div class="overlay-container">
+            <div class="overlay">
+              <div class="overlay-panel overlay-left">
+                <h1>Welcome Back!</h1>
+                <p>To stay connected to the Tic Tac Toe login with your info</p>
+                <button class="ghost" id="signIn">Sign In</button>
+              </div>
+              <div class="overlay-panel overlay-right">
+                <h1>Sign Up to Play Tic Tac Toe</h1>
+                <p>To start a game of TicTacToe just enter your details</p>
+                <button class="ghost" id="signUp">Sign Up</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        <!--auth display message-->
+        <div class="alert alert-dark"id="display-message"></div>
+
+
+        <!--Create modal pop-up for change password-->
+ 
+
+<!-- Modal -->
+<div class="modal fade option-btn" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Game Options</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="change-password">
+          <div class="form-group">
+            <label for="password">Change Password</label>
+          <input type="password" class="form-control" name="passwords[old]" placeholder="Old Password" required/>
+          <input type="password" class="form-control" name="passwords[new]" placeholder="New Password" required/>
+          <button class="btn btn-warning">Change Password</button>
+        </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+          
+            
+          
+
+
+        
+
+
+        <div id="game-section">
+          <nav class="navbar navbar-light bg-light">
+            <!-- Button trigger modal --> 
+            <button type="button" class="btn btn-primary" id="password-btn"data-toggle="modal" data-target="#exampleModal">Options</button>
+            <form id="sign-out">
+            <button id="sign-out" class="btn btn-danger">Sign Out</button>
+            </form>
+            <button class="btn btn-success" id="new-game">New Game</button>
+          </nav>
+
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="col-12 col-sm-2  game-panel" id="game-message"><br></div>
+              <div class="col-12 col-sm-6 content">
+                <div class="container-fluid tic-board game-board"id="game-board">
+              <div class="row tic-row">
+                <div class="col-4 tic-box box" data-index='0'></div>
+                <div  class="col-4 tic-box box" data-index='1'></div>
+                <div  class="col-4 tic-box box" data-index='2'></div>
+              </div>
+              <div class="row tic-row">
+                <div  class="col-4 tic-box box" data-index='3'></div>
+                <div  class="col-4 tic-box box" data-index='4'></div>
+                <div  class="col-4 tic-box box" data-index='5'></div>
+              </div>
+              <div class="row tic-row">
+                <div class="col-4 tic-box box" data-index='6'></div>
+                <div class="col-4 tic-box box" data-index='7'></div>
+                <div class="col-4 tic-box box" data-index='8'></div>
+              </div>
+              </div>
+              <div class="col-12 col-sm-2 panel"id="turn-display"><br></div>
+              <button class="btn btn-danger" id="view-game">View Games</button>
+          </div>
+        </div>
+          <!-- <div class="game-message" id="game-message">
+            <button id="restart-btn">Play Again</button>
+          </div> -->
+        </div>
+      </div>
+    </body>
+</html>
