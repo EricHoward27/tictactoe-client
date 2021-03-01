@@ -15,7 +15,7 @@ $(() => {
   $('#change-password').on('submit', authEvents.onChangePassword)
   // hide sign out and cp
   $('#sign-out').hide()
-  $('#change-password').hide()
+  $('#password-btn').hide()
   $('#game-message').hide()
   $('#turn-display').hide()
   // $('#reset-game').hide()
@@ -25,6 +25,8 @@ $(() => {
   $('#new-game').hide()
   // hide game board until the new game button is click
   $('#game-board').hide()
+  // hide view games btn
+  $('#view-game').hide()
   // when new game btn is press gameboard show
   $('#new-game').on('click', () => {
     $('#game-board').show()
@@ -39,4 +41,11 @@ $('.box').on('click', gameEvents.onCellClick)
 
   // tictactoe board click handler
   // $('#game-board').on('click', gameEvents.onGameBoard)
+
+  $('#signUp').on('click', () => {
+    $('.container').addClass('right-panel-active')
+  })
+  $('#signIn').on('click', () => {
+    $('.container').removeClass('right-panel-active')
+  })
 })

@@ -12,6 +12,7 @@ const onNewGameSuccess = (data) => {
   // game message to show success text when play btn is click
   // $('#display-message').text('Welcome to Tic Tac Toe!')
   // $('#game-message').text('Player X have first move...!')
+  $('#view-game').show()
 }
 const onNewGameFail = (error) => {
   // if game fail to start this message will show
@@ -50,15 +51,15 @@ const gameOver = () => {
   }, 4000)
 }
 const checkWinnerSuccess = () => {
-  store.game.over = true
-  $('#turn-display').text(`${store.playerTurn} wins match! Click New Game to continue...`).show()
+  store.gameOver = true
+  $('#turn-display').text(`${store.currentPlayer} wins match! Click New Game to continue...`).show()
 
   setTimeout(()=> {
     $('#turn-display').hide()
   }, 4000)
 }
 const checkTieSuccess = () => {
-  store.game.over = true
+  store.gameOver = true
   $('#turn-display').text(`It's a tie! Click New Game to continue...`).show()
 
   setTimeout(()=> {
